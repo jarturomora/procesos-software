@@ -57,19 +57,16 @@ Claro, aquí tienes los **requisitos funcionales y no funcionales** derivados de
 2. **Disponibilidad y acceso multiplataforma:**
    La plataforma debe estar disponible las 24 horas, accesible desde ordenadores, tablets y móviles.
 
-3. **Notificaciones automáticas:**
-   Las notificaciones deben enviarse automáticamente y de forma oportuna antes de la actividad.
-
-4. **Interfaz intuitiva y accesible:**
+3. **Interfaz intuitiva y accesible:**
    La interfaz debe ser fácil de usar para cualquier tipo de usuario, incluyendo accesibilidad para personas con discapacidad.
 
-5. **Consistencia en la gestión de horarios y solapamientos:**
+4. **Consistencia en la gestión de horarios y solapamientos:**
    El sistema debe garantizar que los horarios definidos no entren en conflicto entre sí ni permitan dobles reservas no válidas.
 
-6. **Escalabilidad del sistema:**
+5. **Escalabilidad del sistema:**
    El sistema debe soportar un número creciente de usuarios y actividades sin pérdida de rendimiento.
 
-7. **Auditoría de acciones relevantes:**
+6. **Auditoría de acciones relevantes:**
    Toda modificación en aforos, normas, horarios, reservas y registros debe quedar registrada para trazabilidad.
 
 ## Diagrama de casos de uso
@@ -91,14 +88,15 @@ Claro, aquí tienes los **requisitos funcionales y no funcionales** derivados de
 
 ### Caso de Uso: Reservar plaza
 
-| **Elemento**            | **Descripción**                                                                                                                                                                                                                                          |
-| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Nombre**              | Reservar plaza                                                                                                                                                                                                                                           |
-| **Actor principal**     | Usuario                                                                                                                                                                                                                                                  |
-| **Requisito funcional** | RF2: Reservar plaza en una actividad                                                                                                                                                                                                                     |
-| **Precondición**        | El usuario ha iniciado sesión y ha consultado actividades disponibles                                                                                                                                                                                    |
-| **Curso típico**        | 1. El usuario selecciona una actividad.<br>2. El sistema valida la disponibilidad (<<include>>).<br>3. El sistema comprueba si existe incompatibilidad horaria (<<extend>>).<br>4. El usuario confirma la reserva.<br>5. El sistema registra la reserva. |
-| **Curso alternativo**   | - Si no hay plazas disponibles, el sistema informa al usuario.<br>- Si hay conflictos de horario, se bloquea la reserva y se muestra un mensaje.                                                                                                         |
+| **Elemento**               | **Descripción**                                                                                                                                                                                                                                                                                                                                                                                            |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Nombre**                 | Reservar plaza                                                                                                                                                                                                                                                                                                                                                                                             |
+| **Actor principal**        | Usuario                                                                                                                                                                                                                                                                                                                                                                                                    |
+| **Requisitos funcionales** | **RF2** Reservar plaza en una actividad  <br> **RF4** Controlar aforo máximo  <br> **RF5** Evitar reservas simultáneas incompatibles                                                                                                                                                                                                                                                                       |
+| **Precondición**           | El usuario ha iniciado sesión y ha consultado actividades                                                                                                                                                                                                                                                                                                                                                  |
+| **Curso típico**           | 1. El usuario selecciona una actividad.<br>2. El sistema comprueba el aforo máximo configurado para la actividad (**RF4**).<br>3. El sistema verifica que el usuario no tiene otra reserva incompatible en el mismo horario (**RF5**).<br>4. El sistema muestra la disponibilidad.<br>5. El usuario confirma la reserva.<br>6. El sistema registra la reserva y actualiza el número de plazas disponibles. |
+| **Curso alternativo 1**    | Si el aforo máximo está completo, el sistema impide la reserva y muestra un mensaje informativo (**RF4**).                                                                                                                                                                                                                                                                                                 |
+| **Curso alternativo 2**    | Si existe una reserva incompatible en el mismo horario, el sistema bloquea la operación y notifica el conflicto (**RF5**).                                                                                                                                                                                                                                                                                 |
 
 ### Caso de Uso: Cancelar reserva
 
@@ -157,14 +155,14 @@ Claro, aquí tienes los **requisitos funcionales y no funcionales** derivados de
 
 ### Caso de Uso: Configurar aforos
 
-| **Elemento**            | **Descripción**                                                                                                                 |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| **Nombre**              | Configurar aforos                                                                                                               |
-| **Actor principal**     | Administrador                                                                                                                   |
-| **Requisito funcional** | RF10: Configurar aforos máximos                                                                                                 |
-| **Precondición**        | El administrador ha iniciado sesión                                                                                             |
-| **Curso típico**        | 1. Selecciona una actividad o instalación.<br>2. Define el número máximo de participantes.<br>3. El sistema actualiza el aforo. |
-| **Curso alternativo**   | Si el nuevo aforo es menor que el número de reservas ya registradas, el sistema muestra una advertencia.                        |
+| **Elemento**            | **Descripción**                                                                                                                                                                    |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Nombre**              | Configurar aforos                                                                                                                                                                  |
+| **Actor principal**     | Administrador                                                                                                                                                                      |
+| **Requisito funcional** | RF10: Configurar aforos máximos                                                                                                                                                    |
+| **Precondición**        | El administrador ha iniciado sesión                                                                                                                                                |
+| **Curso típico**        | 1. El administrador selecciona una actividad o instalación.<br>2. Define el número máximo de participantes.<br>3. El sistema guarda el nuevo aforo y lo aplica a futuras reservas. |
+| **Curso alternativo**   | Si el nuevo aforo es inferior a las reservas existentes, el sistema muestra una advertencia y solicita confirmación.                                                               |
 
 ### Caso de Uso: Configurar normas de uso
 
