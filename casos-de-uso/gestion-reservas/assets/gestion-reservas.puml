@@ -1,0 +1,42 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Usuario" as Usuario
+actor "Monitor Deportivo" as Monitor
+actor "Administrador" as Admin
+
+rectangle "Plataforma de Gestión de Reservas" {
+
+  usecase "Consultar actividades" as consultar
+  usecase "Reservar plaza" as reservar
+  usecase "Cancelar reserva" as cancelar
+  usecase "Recibir recordatorio" as recordatorio
+
+  usecase "Registrar asistencia" as asistencia
+  usecase "Registrar incidencia" as incidencia
+
+  usecase "Configurar horarios" as configurarHorarios
+  usecase "Configurar aforos" as configurarAforos
+  usecase "Configurar normas de uso" as configurarNormas
+
+  usecase "Validar disponibilidad" as validar <<include>>
+  usecase "Evitar reservas incompatibles" as incompatibles <<extend>>
+
+  reservar --> validar : <<include>>
+  reservar <-- incompatibles : <<extend>>
+
+  Usuario -- consultar
+  Usuario -- reservar
+  Usuario -- cancelar
+  Usuario -- recordatorio
+
+  Monitor -- asistencia
+  Monitor -- incidencia
+
+  Admin -- configurarHorarios
+  Admin -- configurarAforos
+  Admin -- configurarNormas
+}
+
+@enduml
