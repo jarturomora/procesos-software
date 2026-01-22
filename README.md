@@ -8,7 +8,7 @@ Este material está disponible libremente, bajo la responsabilidad exclusiva de 
 
 ## Contenido
 
-* [Casos de uso y definición de requisitos](casos-de-uso/README.md))
+* [Casos de uso y definición de requisitos](casos-de-uso/README.md)
 
 ## Herramientas
 
