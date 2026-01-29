@@ -10,8 +10,6 @@ Los monitores deportivos gestionan la asistencia y registran incidencias. Los ad
 
 El sistema debe controlar el número máximo de participantes, impedir reservas simultáneas incompatibles y enviar recordatorios automáticos antes de cada actividad.
 
-Claro, aquí tienes los **requisitos funcionales y no funcionales** derivados del caso práctico de la **Plataforma de Gestión de Reservas de Actividades Deportivas** para el servicio deportivo de una universidad:
-
 ## Requisitos
 
 ### Requisitos funcionales
