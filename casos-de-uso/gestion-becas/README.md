@@ -11,3 +11,7 @@ El personal administrativo revisa las solicitudes, solicita información adicion
 El sistema debe permitir consultar el estado de la solicitud, registrar alegaciones dentro de un plazo y notificar cada cambio al estudiante.
 
 Además, se deben generar listados de beneficiarios y estadísticas anuales sobre la concesión de becas.
+
+## Solución
+
+La solución de este caso práctico está disponible en [este documento](solucion.md).
