@@ -19,4 +19,4 @@ Las soluciones presentadas son ejemplos realizados por el autor del repositorio 
 
 * [Sistema de Gestión de Solicitudes de Becas Universitarias ✅](gestion-becas/README.md)
 
-* [Sistema de Gestión de Solicitudes de Mantenimiento de Infraestructuras 🤔](gestion-mantenimiento/README.md)
+* [Sistema de Gestión de Solicitudes de Mantenimiento de Infraestructuras ✅](gestion-mantenimiento/README.md)

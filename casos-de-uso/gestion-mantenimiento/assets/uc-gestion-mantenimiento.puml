@@ -1,0 +1,53 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Empleado" as Empleado
+actor "Responsable de Mantenimiento" as Responsable
+actor "Técnico" as Tecnico
+
+rectangle "Sistema de Gestión de Mantenimiento" {
+
+  usecase "Registrar solicitud" as UC_Registrar
+  usecase "Consultar/seguir solicitud" as UC_Seguimiento
+
+  usecase "Clasificar solicitud" as UC_Clasificar
+  usecase "Asignar técnico" as UC_Asignar
+  usecase "Planificar intervención" as UC_Planificar
+
+  usecase "Actualizar estado" as UC_Estado
+  usecase "Registrar tiempo empleado" as UC_Tiempo
+  usecase "Registrar intervención" as UC_Intervencion
+
+  usecase "Generar historial por ubicación" as UC_Historial
+
+  usecase "Notificar cambio de estado" as UC_NotifEstado
+  usecase "Notificar retraso" as UC_NotifRetraso
+  usecase "Detectar retraso" as UC_DetectarRetraso
+
+  ' include: pasos obligatorios dentro del flujo
+  UC_Estado --> UC_NotifEstado : <<include>>
+  UC_NotifRetraso --> UC_DetectarRetraso : <<include>>
+
+  ' extend: comportamiento opcional/condicional
+  UC_Planificar <.. UC_NotifRetraso : <<extend>>
+  UC_Estado <.. UC_Tiempo : <<extend>>
+  UC_Estado <.. UC_Intervencion : <<extend>>
+
+}
+
+Empleado -- UC_Registrar
+Empleado -- UC_Seguimiento
+
+Responsable -- UC_Seguimiento
+Responsable -- UC_Clasificar
+Responsable -- UC_Asignar
+Responsable -- UC_Planificar
+Responsable -- UC_Historial
+
+Tecnico -- UC_Seguimiento
+Tecnico -- UC_Estado
+Tecnico -- UC_Tiempo
+Tecnico -- UC_Intervencion
+
+@enduml
