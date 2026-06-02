@@ -20,3 +20,7 @@ Las soluciones presentadas son ejemplos realizados por el autor del repositorio 
 * [Sistema de Gestión de Solicitudes de Becas Universitarias ✅](gestion-becas/README.md)
 
 * [Sistema de Gestión de Solicitudes de Mantenimiento de Infraestructuras ✅](gestion-mantenimiento/README.md)
+
+* [Sistema de Gestión de Viviendas Turísticas 🤔](gestion-viviendas-turisticas/README.md)
+
+* [Plataforma de Gestión de Competiciones Deportivas Amateur ](gestion-competiciones/README.md)
