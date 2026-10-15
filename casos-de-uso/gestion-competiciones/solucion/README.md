@@ -308,5 +308,5 @@ Esta matriz permite comprobar que cada requisito funcional tiene asociado al men
 | RF17 – Gestionar reclamaciones               | CU-17A, CU-17B       | Completa  |
 | RF18 – Validar inscripciones                 | CU-05, CU-18         | Completa  |
 
-> ![NOTE]
+> [!NOTE]
 > Esta solución constituye una referencia completa para el nivel introductorio. Los alumnos pueden proponer otros casos de uso o agrupar funcionalidades de manera diferente y obtener igualmente la máxima calificación, siempre que su análisis sea coherente, los requisitos estén cubiertos y el modelado UML sea correcto.
