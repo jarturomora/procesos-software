@@ -1,0 +1,116 @@
+@startuml
+left to right direction
+
+skinparam shadowing false
+skinparam packageStyle rectangle
+skinparam backgroundColor white
+
+skinparam usecase {
+    BorderColor #2C3E50
+    FontColor #1F2937
+}
+
+actor Organizador
+actor Deportista
+actor Arbitro as "Árbitro"
+actor Administrador
+
+rectangle "PLATAFORMA DE GESTIÓN DE COMPETICIONES DEPORTIVAS" {
+
+    package "🏆 Gestión de Competiciones" #D6EAF8 {
+
+        together {
+            usecase UC01 as "Crear torneo"
+            usecase UC02 as "Gestionar categorías"
+            usecase UC03 as "Gestionar calendario"
+            usecase UC04 as "Registrar equipos\ny participantes"
+            usecase UC05 as "Inscribirse en\ncompetición"
+            usecase UC18 as "Validar inscripción"
+        }
+    }
+
+    package "⚽ Gestión de Encuentros" #FCF3CF {
+
+        together {
+            usecase UC08 as "Registrar resultado"
+            usecase UC09 as "Registrar incidencia"
+            usecase UC10 as "Registrar sanción"
+            usecase UC11 as "Actualizar clasificación"
+            usecase UC12 as "Generar estadísticas"
+        }
+    }
+
+    package "📅 Consultas" #D5F5E3 {
+
+        together {
+            usecase UC06 as "Consultar calendario"
+            usecase UC07 as "Consultar resultados\ny clasificaciones"
+            usecase UC15 as "Consultar históricos"
+        }
+    }
+
+    package "📢 Comunicación" #FADBD8 {
+
+        together {
+            usecase UC13 as "Enviar comunicaciones"
+            usecase UC14 as "Publicar noticias"
+        }
+    }
+
+    package "⚙ Administración" #E8DAEF {
+
+        together {
+            usecase UC16 as "Supervisar y\ncorregir errores"
+            usecase UC17A as "Presentar reclamación"
+            usecase UC17B as "Resolver reclamación"
+        }
+    }
+
+    UC05 ..> UC18 : <<include>>
+
+    UC08 ..> UC11 : <<include>>
+    UC08 ..> UC12 : <<include>>
+
+    UC09 ..> UC08 : <<extend>>
+    UC10 ..> UC09 : <<extend>>
+}
+
+'-------------------------
+' Organizador (lado izquierdo)
+'-------------------------
+
+Organizador --> UC01
+Organizador --> UC02
+Organizador --> UC03
+Organizador --> UC04
+Organizador --> UC13
+Organizador --> UC14
+
+'-------------------------
+' Deportista (abajo izquierda)
+'-------------------------
+
+Deportista --> UC05
+Deportista --> UC06
+Deportista --> UC07
+Deportista --> UC15
+Deportista --> UC17A
+
+'-------------------------
+' Árbitro (centro inferior)
+'-------------------------
+
+Arbitro --> UC06
+Arbitro --> UC08
+Arbitro --> UC09
+Arbitro --> UC10
+
+'-------------------------
+' Administrador (derecha)
+'-------------------------
+
+Administrador --> UC16
+Administrador --> UC17B
+Administrador --> UC07
+
+@enduml
