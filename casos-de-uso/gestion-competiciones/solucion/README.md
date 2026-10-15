@@ -53,11 +53,7 @@ El sistema ejecuta también funciones automáticas, como actualizar las clasific
 
 El diagrama representa las funcionalidades principales e incorpora las relaciones `<<include>>` y `<<extend>>`, utilizando su dirección correcta según UML.
 
-```
-
-
-
-```
+![Diagrama de casos de uso](casos_uso.png)
 
 ### 4.1. Justificación de las relaciones
 
