@@ -308,26 +308,5 @@ Esta matriz permite comprobar que cada requisito funcional tiene asociado al men
 | RF17 – Gestionar reclamaciones               | CU-17A, CU-17B       | Completa  |
 | RF18 – Validar inscripciones                 | CU-05, CU-18         | Completa  |
 
-# 18/18
-
-Requisitos funcionales cubiertos
-
-# 19
-
-Casos de uso documentados
-
-# 5
-
-Relaciones include y extend
-
-## 7. Observaciones didácticas
-
-Para utilizar esta solución como referencia en la corrección de ejercicios, destacaría tres aspectos.
-
-Primero, la trazabilidad. Los alumnos deben comprender que no necesariamente existe una relación uno a uno entre requisitos funcionales y casos de uso. Por ejemplo, «Registrar resultado» satisface directamente RF8, pero también desencadena las funcionalidades de RF11 y RF12.
-
-Segundo, el uso correcto de `include` y `extend`. No debemos utilizar estas relaciones simplemente para conectar funcionalidades relacionadas. `include` incorpora comportamiento obligatorio, mientras que `extend` añade comportamiento condicional en un punto de extensión. En este ejemplo, la actualización de clasificaciones es obligatoria tras confirmar un resultado; registrar una incidencia durante la elaboración del acta, en cambio, es una posibilidad.
-
-Tercero, la coherencia entre los diagramas y los cursos de acciones. Toda relación representada en el diagrama debe poder comprenderse a partir de los flujos definidos. Las acciones automáticas deben quedar documentadas, aunque no exista un actor humano que las ejecute directamente.
-
-Esta solución constituye una referencia completa para el nivel introductorio. Los alumnos pueden proponer otros casos de uso o agrupar funcionalidades de manera diferente y obtener igualmente la máxima calificación, siempre que su análisis sea coherente, los requisitos estén cubiertos y el modelado UML sea correcto.
+> ![NOTE]
+> Esta solución constituye una referencia completa para el nivel introductorio. Los alumnos pueden proponer otros casos de uso o agrupar funcionalidades de manera diferente y obtener igualmente la máxima calificación, siempre que su análisis sea coherente, los requisitos estén cubiertos y el modelado UML sea correcto.
